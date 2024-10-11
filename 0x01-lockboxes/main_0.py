@@ -1,11 +1,12 @@
-def canUnlockAll(boxes):
-    n = len(boxes)
-    seen_boxes = {0}
-    keys = boxes[0]
+#!/usr/bin/python3
 
-    for key in keys:
-        if key < n and key not in seen_boxes:
-            seen_boxes.add(key)
-            keys.extend(boxes[key])  # Add new keys to explore later
+canUnlockAll = __import__('0-lockboxes').canUnlockAll
 
-    return len(seen_boxes) == n
+boxes = [[1], [2], [3], [4], []]
+print(canUnlockAll(boxes))
+
+boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
+print(canUnlockAll(boxes))
+
+boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
+print(canUnlockAll(boxes))
