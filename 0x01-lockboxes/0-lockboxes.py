@@ -1,14 +1,11 @@
 def canUnlockAll(boxes):
-    opened = [False] * len(boxes)
-    opened[0] = True
+    n = len(boxes)
+    seen_boxes = {0}
     keys = boxes[0]
-    index = 0
 
-    while index < len(keys):
-        current_key = keys[index]
-        if current_key < len(boxes) and not opened[current_key]:
-            opened[current_key] = True
-            keys.extend(boxes[current_key])
-        index += 1
+    for key in keys:
+        if key < n and key not in seen_boxes:
+            seen_boxes.add(key)
+            keys.extend(boxes[key])  # Add new keys to explore later
 
-    return all(opened)
+    return len(seen_boxes) == n
