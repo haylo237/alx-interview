@@ -3,7 +3,6 @@
 """
 import sys
 
-
 solutions = []
 """The list of possible solutions to the N queens problem.
 """
@@ -36,7 +35,6 @@ def get_input():
         sys.exit(1)
     return n
 
-
 def is_attacking(pos0, pos1):
     """Checks if the positions of two queens are in an attacking mode.
 
@@ -50,7 +48,6 @@ def is_attacking(pos0, pos1):
     if (pos0[0] == pos1[0]) or (pos0[1] == pos1[1]):
         return True
     return abs(pos0[0] - pos1[0]) == abs(pos0[1] - pos1[1])
-
 
 def group_exists(group):
     """Checks if a group exists in the list of solutions.
@@ -71,7 +68,6 @@ def group_exists(group):
         if i == n:
             return True
     return False
-
 
 def build_solution(row, group):
     """Builds a solution for the n queens problem.
