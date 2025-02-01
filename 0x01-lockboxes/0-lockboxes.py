@@ -3,7 +3,6 @@
 This is a module that provides a function for determining if all
 boxes in a given list can be opened.
 """
-
 def canUnlockAll(boxes):
     """
     This function takes a list of lists and returns a boolean indicating
